@@ -1,5 +1,6 @@
 "use client";
 
+import Marquee from "react-fast-marquee";
 import { 
   SiJavascript, 
   SiReact, 
@@ -47,9 +48,6 @@ const techStackExtended = [
 ];
 
 export function HorizontalTechScroll() {
-  // Quadruple array for perfect seamless infinite scroll (no reset visible)
-  const duplicatedTech = [...techStackExtended, ...techStackExtended, ...techStackExtended, ...techStackExtended];
-
   return (
     <section id="tech-stack" className="py-16 bg-gradient-to-r from-background via-muted/30 to-background">
       <div className="max-w-7xl mx-auto px-6">
@@ -62,31 +60,30 @@ export function HorizontalTechScroll() {
           </p>
         </div>
 
-        {/* Horizontal Scrolling Container */}
-        <div className="relative overflow-hidden">
-          {/* Gradient fade edges */}
-          <div className="absolute left-0 top-0 bottom-0 w-20 bg-gradient-to-r from-background to-transparent z-10" />
-          <div className="absolute right-0 top-0 bottom-0 w-20 bg-gradient-to-l from-background to-transparent z-10" />
-          
-          {/* Scrolling content */}
-          <div className="flex animate-scroll-x" style={{ willChange: 'transform' }}>
-            {duplicatedTech.map((tech, index) => (
-              <div
-                key={`${tech.name}-${index}`}
-                className="flex-shrink-0 mx-8 group cursor-pointer"
-              >
-                <div className="flex flex-col items-center justify-center p-6 rounded-xl bg-card/50 border border-border/50 backdrop-blur-sm hover:bg-card/80 hover:border-border hover:scale-105 transition-all duration-300 min-w-[120px] h-[120px]">
-                  <tech.icon 
-                    className={`text-4xl mb-3 transition-all duration-300 group-hover:scale-110 ${tech.color}`}
-                  />
-                  <span className="text-xs font-medium text-muted-foreground group-hover:text-foreground transition-colors text-center">
-                    {tech.name}
-                  </span>
-                </div>
+        {/* REACT-FAST-MARQUEE - Professional infinite scroll */}
+        <Marquee
+          pauseOnHover={true}
+          speed={50}
+          gradient={true}
+          gradientColor="hsl(var(--background))"
+          gradientWidth={80}
+        >
+          {techStackExtended.map((tech, index) => (
+            <div
+              key={`${tech.name}-${index}`}
+              className="mx-6 group cursor-pointer"
+            >
+              <div className="flex flex-col items-center justify-center p-4 rounded-xl bg-card/50 border border-border/50 backdrop-blur-sm hover:bg-card/80 hover:border-border hover:scale-105 transition-all duration-300 w-[100px] h-[100px]">
+                <tech.icon 
+                  className={`text-3xl mb-2 transition-all duration-300 group-hover:scale-110 ${tech.color}`}
+                />
+                <span className="text-xs font-medium text-muted-foreground group-hover:text-foreground transition-colors text-center">
+                  {tech.name}
+                </span>
               </div>
-            ))}
-          </div>
-        </div>
+            </div>
+          ))}
+        </Marquee>
       </div>
     </section>
   );
