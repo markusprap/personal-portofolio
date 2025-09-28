@@ -51,7 +51,7 @@ export function HorizontalTechScroll() {
   const duplicatedTech = [...techStackExtended, ...techStackExtended, ...techStackExtended];
 
   return (
-    <div className="py-16 bg-gradient-to-r from-background via-muted/30 to-background">
+    <section id="tech-stack" className="py-16 bg-gradient-to-r from-background via-muted/30 to-background">
       <div className="max-w-7xl mx-auto px-6">
         <div className="text-center mb-12">
           <h3 className="text-2xl md:text-3xl font-bold text-foreground mb-4">
@@ -88,6 +88,6 @@ export function HorizontalTechScroll() {
           </div>
         </div>
       </div>
-    </div>
+    </section>
   );
 }

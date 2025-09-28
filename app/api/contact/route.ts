@@ -104,6 +104,7 @@ export async function POST(request: NextRequest) {
       
       // Continue anyway - don't block user for database issues 
       console.log('⚠️ Continuing without database save - user experience priority')
+      console.log('🔧 PRODUCTION DEBUG: Contact form will return success despite DB error')
     }
 
     // Simulate email sending delay
