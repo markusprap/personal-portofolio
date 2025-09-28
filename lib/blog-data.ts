@@ -145,7 +145,7 @@ Building a modern portfolio website with Next.js 14 provides excellent performan
 Ready to start building? Check out the complete source code and follow along with the tutorial series!
     `,
     author: {
-      name: "Alex Thompson",
+      name: "Markus Prap Kurniawan",
       avatar: "/placeholder-user.jpg",
       bio: "Full-stack developer passionate about modern web technologies and clean code architecture."
     },
@@ -205,7 +205,7 @@ type EventName<T extends string> = \`on\${Capitalize<T>}\`
 These advanced TypeScript patterns will help you write more robust and maintainable code.
     `,
     author: {
-      name: "Alex Thompson",
+      name: "Markus Prap Kurniawan",
       avatar: "/placeholder-user.jpg",
       bio: "Full-stack developer passionate about modern web technologies and clean code architecture."
     },
@@ -271,7 +271,7 @@ const todosSlice = createSlice({
 Both are excellent choices depending on your needs!
     `,
     author: {
-      name: "Alex Thompson",
+      name: "Markus Prap Kurniawan",
       avatar: "/placeholder-user.jpg",
       bio: "Full-stack developer passionate about modern web technologies and clean code architecture."
     },

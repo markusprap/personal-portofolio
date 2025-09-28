@@ -18,7 +18,7 @@ export function generateSEO({
   title,
   description,
   keywords = [],
-  author = 'Alex Thompson',
+  author = 'Markus Prap Kurniawan',
   type = 'website',
   image = '/placeholder.jpg',
   url,
@@ -27,7 +27,7 @@ export function generateSEO({
   section,
   tags = []
 }: SEOProps): Metadata {
-  const siteName = 'Alex Thompson Portfolio'
+  const siteName = 'Markus Prap Kurniawan Portfolio'
   const fullTitle = title.includes(siteName) ? title : `${title} | ${siteName}`
   
   return {
@@ -141,26 +141,36 @@ export function generatePersonStructuredData() {
   return {
     '@context': 'https://schema.org',
     '@type': 'Person',
-    name: 'Alex Thompson',
-    jobTitle: 'Full Stack Developer',
-    description: 'Passionate full-stack developer with expertise in React, Next.js, TypeScript, and modern web technologies.',
-    url: 'https://alexthompson.dev', // Replace with actual domain
+    name: 'Markus Prap Kurniawan',
+    jobTitle: 'Fullstack Developer',
+    description: 'Passionate fullstack developer specializing in AI/ML, React.js, Next.js, Node.js, and modern web technologies. Based in Jombang, East Java, Indonesia.',
+    url: 'https://markusprap.space',
     sameAs: [
-      'https://github.com/alexthompson',
-      'https://linkedin.com/in/alexthompson',
-      'https://twitter.com/alexthompson',
+      'https://github.com/markusprap',
+      'https://linkedin.com/in/markusprap',
+      'https://instagram.com/markusprap'
     ],
     knowsAbout: [
       'JavaScript',
-      'TypeScript',
+      'TypeScript', 
       'React',
       'Next.js',
       'Node.js',
+      'Python',
+      'Go',
+      'PHP',
+      'Laravel',
       'PostgreSQL',
       'MongoDB',
-      'AWS',
-      'Docker',
-      'Kubernetes'
+      'AI/ML',
+      'Machine Learning',
+      'Artificial Intelligence'
     ],
+    address: {
+      '@type': 'PostalAddress',
+      addressLocality: 'Jombang',
+      addressRegion: 'East Java',
+      addressCountry: 'Indonesia'
+    }
   }
 }
