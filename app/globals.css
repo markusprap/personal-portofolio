@@ -193,20 +193,20 @@ html {
 }
 
 .animate-scroll-x {
-  animation: scroll-x 15s linear infinite !important;
+  animation: scroll-x 6s linear infinite !important;
   transform: translateX(0);
 }
 
-/* Slightly faster for tablets */
+/* Super fast for tablets - no visible reset */
 @media (max-width: 768px) {
   .animate-scroll-x {
-    animation: scroll-x 12s linear infinite !important;
+    animation: scroll-x 5s linear infinite !important;
   }
 }
 
-/* Optimized for mobile - not too fast */
+/* Ultra fast for mobile - seamless flow */
 @media (max-width: 480px) {
   .animate-scroll-x {
-    animation: scroll-x 10s linear infinite !important;
+    animation: scroll-x 4s linear infinite !important;
   }
 }
