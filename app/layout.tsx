@@ -20,26 +20,29 @@ const jetbrainsMono = JetBrains_Mono({
   subsets: ["latin"],
 })
 
-export const metadata: Metadata = generateSEO({
-  title: "Markus Prap Kurniawan - Fullstack Web Developer",
-  description: "Portfolio website of Markus Prap Kurniawan, a passionate fullstack web developer specializing in modern web technologies, React.js, Next.js, Node.js, and more.",
-  keywords: [
-    "Fullstack Developer",
-    "React Developer", 
-    "Next.js",
-    "TypeScript",
-    "JavaScript",
-    "Web Development",
-    "Frontend",
-    "Backend",
-    "Portfolio",
-    "Markus Prap Kurniawan"
-  ],
-  author: "Markus Prap Kurniawan",
-  type: "website",
-  url: "https://markusprap.dev", // Replace with actual domain
-  image: "/logo_title.png"
-})
+export const metadata: Metadata = {
+  metadataBase: new URL('https://markusprap.space'),
+  ...generateSEO({
+    title: "Markus Prap Kurniawan - Fullstack Web Developer",
+    description: "Portfolio website of Markus Prap Kurniawan, a passionate fullstack web developer specializing in modern web technologies, React.js, Next.js, Node.js, and more.",
+    keywords: [
+      "Fullstack Developer",
+      "React Developer", 
+      "Next.js",
+      "TypeScript",
+      "JavaScript",
+      "Web Development",
+      "Frontend",
+      "Backend",
+      "Portfolio",
+      "Markus Prap Kurniawan"
+    ],
+    author: "Markus Prap Kurniawan",
+    type: "website",
+    url: "https://markusprap.space",
+    image: "/logo_title.png"
+  })
+}
 
 export default function RootLayout({
   children,
