@@ -182,31 +182,31 @@ html {
   animation: bounce-slow 3s infinite;
 }
 
-/* Horizontal scroll animation for tech stack - optimized for triple array */
+/* Horizontal scroll animation for tech stack - seamless infinite loop */
 @keyframes scroll-x {
   0% {
     transform: translateX(0);
   }
   100% {
-    transform: translateX(-33.33%);
+    transform: translateX(-25%);
   }
 }
 
 .animate-scroll-x {
-  animation: scroll-x 5s linear infinite !important;
+  animation: scroll-x 15s linear infinite !important;
   transform: translateX(0);
 }
 
-/* Faster animation for mobile devices */
+/* Slightly faster for tablets */
 @media (max-width: 768px) {
   .animate-scroll-x {
-    animation: scroll-x 4s linear infinite !important;
+    animation: scroll-x 12s linear infinite !important;
   }
 }
 
-/* Ultra-fast for small screens */
+/* Optimized for mobile - not too fast */
 @media (max-width: 480px) {
   .animate-scroll-x {
-    animation: scroll-x 3s linear infinite !important;
+    animation: scroll-x 10s linear infinite !important;
   }
 }

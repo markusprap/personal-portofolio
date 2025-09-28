@@ -47,8 +47,8 @@ const techStackExtended = [
 ];
 
 export function HorizontalTechScroll() {
-  // Triple array for smoother infinite scroll and prevent reset
-  const duplicatedTech = [...techStackExtended, ...techStackExtended, ...techStackExtended];
+  // Quadruple array for perfect seamless infinite scroll (no reset visible)
+  const duplicatedTech = [...techStackExtended, ...techStackExtended, ...techStackExtended, ...techStackExtended];
 
   return (
     <section id="tech-stack" className="py-16 bg-gradient-to-r from-background via-muted/30 to-background">
