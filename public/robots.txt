@@ -1,0 +1,10 @@
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://markusprap.space/sitemap.xml
+
+# Block admin and API routes
+Disallow: /admin/
+Disallow: /api/
+Disallow: /test-supabase/
