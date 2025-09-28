@@ -69,7 +69,7 @@ export function HorizontalTechScroll() {
           <div className="absolute right-0 top-0 bottom-0 w-20 bg-gradient-to-l from-background to-transparent z-10" />
           
           {/* Scrolling content */}
-          <div className="flex animate-scroll-x">
+          <div className="flex animate-scroll-x" style={{ willChange: 'transform' }}>
             {duplicatedTech.map((tech, index) => (
               <div
                 key={`${tech.name}-${index}`}
