@@ -65,9 +65,22 @@ export function ContactSection() {
         message: "",
       })
     } catch (error: any) {
+      console.error('Contact form error:', error)
+      
+      let errorMessage = "Please try again later or contact me directly via email."
+      
+      // More specific error messages
+      if (error.message?.includes('Too many requests')) {
+        errorMessage = "You've sent several messages recently. Please wait an hour before sending another message, or contact me directly via email."
+      } else if (error.message?.includes('network') || error.message?.includes('fetch')) {
+        errorMessage = "Network error. Please check your connection and try again."
+      } else if (error.message) {
+        errorMessage = error.message
+      }
+      
       toast({
         title: "Error sending message",
-        description: error.message || "Please try again later or contact me directly via email.",
+        description: errorMessage,
         variant: "destructive",
       })
     } finally {

@@ -11,8 +11,8 @@ const rateLimitMap = new Map<string, { count: number; resetTime: number }>()
 
 const rateLimit = (ip: string): boolean => {
   const now = Date.now()
-  const windowMs = 15 * 60 * 1000 // 15 minutes
-  const maxRequests = 5 // max 5 requests per window
+  const windowMs = 60 * 60 * 1000 // 1 hour window (more reasonable)
+  const maxRequests = 10 // max 10 requests per hour (less aggressive)
 
   const clientData = rateLimitMap.get(ip)
   
