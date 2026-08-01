@@ -178,6 +178,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
+  gap: 16px;
   opacity: 0;
   animation: fadeIn 0.6s ease 1.8s forwards;
 }
@@ -193,17 +194,32 @@
   font-size: 14px;
   font-weight: 700;
   color: rgba(255, 255, 255, 0.85);
+  white-space: nowrap;
+  flex-shrink: 0;
 }
 
 .topbarRight {
   display: flex;
-  gap: 28px;
+  gap: 14px;
+}
+
+@media (min-width: 400px) {
+  .topbarRight {
+    gap: 28px;
+  }
 }
 
 .topbarRight a {
-  font-size: 13px;
+  font-size: 11px;
   color: rgba(255, 255, 255, 0.4);
   transition: color 0.15s ease;
+  white-space: nowrap;
+}
+
+@media (min-width: 400px) {
+  .topbarRight a {
+    font-size: 13px;
+  }
 }
 
 .topbarRight a:hover {

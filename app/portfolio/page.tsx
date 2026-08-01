@@ -188,7 +188,7 @@ export default function PortfolioPage() {
                 <p className={styles.cardSubtitle}>Distinction Graduate</p>
                 <p className={styles.cardTitle}>React &amp; Backend with AI — Dicoding × Accenture</p>
               </div>
-              <div style={{ display: "flex", alignItems: "center", gap: 10, flex: "none" }}>
+              <div className={styles.cardMetaGroup} style={{ display: "flex", alignItems: "center", gap: 10 }}>
                 <span className={styles.cardMeta}>2025</span>
                 <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
                   <path d="M4 12L12 4M12 4H6M12 4v6" stroke="#ccc" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
@@ -246,8 +246,8 @@ export default function PortfolioPage() {
                       <span style={{ fontFamily: "'Courier New', monospace", fontSize: 10, color: "#999" }}>mkmusic-seven.vercel.app</span>
                     </div>
                   </div>
-                  <div style={{ display: "grid", gridTemplateColumns: "170px 1fr", height: 200, background: "#121212" }}>
-                    <div style={{ borderRight: "1px solid rgba(255,255,255,0.06)", padding: "16px 14px" }}>
+                  <div className={styles.mockupGrid} style={{ display: "grid", background: "#121212" }}>
+                    <div className={styles.mockupSidebar} style={{ borderRight: "1px solid rgba(255,255,255,0.06)", padding: "16px 14px" }}>
                       <div style={{ fontSize: 11, fontWeight: 700, color: "#1db954", marginBottom: 16, letterSpacing: "0.06em" }}>MKMUSIC</div>
                       <div style={{ display: "flex", flexDirection: "column", gap: 3 }}>
                         <div style={{ background: "rgba(29,185,84,0.12)", borderRadius: 6, padding: "7px 10px", display: "flex", alignItems: "center", gap: 8 }}>

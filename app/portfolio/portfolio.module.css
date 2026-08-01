@@ -7,6 +7,7 @@
   background: #f2f0eb;
   color: #1a1a1a;
   min-height: 100vh;
+  overflow-x: hidden;
 }
 
 .reveal {
@@ -261,6 +262,7 @@
 .cardBody {
   flex: 1;
   min-width: 0;
+  overflow-wrap: break-word;
 }
 .cardSubtitle {
   font-size: 13.5px;
@@ -276,6 +278,21 @@
   color: #bbb;
   flex: none;
   white-space: nowrap;
+}
+
+.cardMetaGroup {
+  flex: none;
+}
+
+@media (max-width: 400px) {
+  .card {
+    flex-wrap: wrap;
+  }
+  .card > .cardMeta,
+  .cardMetaGroup {
+    flex-basis: 100%;
+    margin-left: 52px;
+  }
 }
 
 .serviceCard {
@@ -340,6 +357,20 @@
   font-size: 13.5px;
   color: #737373;
   line-height: 1.65;
+}
+
+.mockupGrid {
+  grid-template-columns: 170px 1fr;
+  height: 200px;
+}
+@media (max-width: 480px) {
+  .mockupGrid {
+    grid-template-columns: 1fr;
+    height: auto;
+  }
+  .mockupSidebar {
+    display: none;
+  }
 }
 
 .footer {
