@@ -1,82 +1,34 @@
-import type React from "react"
-import type { Metadata } from "next"
-import { Inter, JetBrains_Mono } from "next/font/google"
-import "./globals.css"
-import { ThemeProvider } from "@/components/theme-provider"
-import { Toaster } from "@/components/ui/toaster"
-import { Toaster as SonnerToaster } from "sonner"
-import { Analytics } from "@/lib/analytics"
-import { generateSEO, generatePersonStructuredData } from "@/lib/seo"
-import { ClientWrapperWithSuspense } from "@/components/client-wrapper-navigation"
-import { AnalyticsTracker } from "@/components/analytics-tracker"
+import type { Metadata } from "next";
+import { DM_Serif_Display, DM_Sans } from "next/font/google";
+import "./globals.css";
 
-const inter = Inter({
-  variable: "--font-inter",
+const dmSerif = DM_Serif_Display({
   subsets: ["latin"],
-})
+  weight: "400",
+  style: ["normal", "italic"],
+  variable: "--font-serif",
+});
 
-const jetbrainsMono = JetBrains_Mono({
-  variable: "--font-jetbrains-mono",
+const dmSans = DM_Sans({
   subsets: ["latin"],
-})
+  weight: ["300", "400", "500", "600"],
+  variable: "--font-sans",
+});
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://markusprap.space'),
-  ...generateSEO({
-    title: "Markus Prap Kurniawan - Fullstack Developer | AI Specialist | React.js Expert",
-    description: "Professional portfolio of Markus Prap Kurniawan - Fullstack Developer specializing in AI/ML, React.js, Next.js, Node.js. Based in Jombang, East Java, Indonesia. Available for freelance projects and full-time opportunities.",
-    keywords: [
-      "Markus Prap Kurniawan",
-      "Markus Prap",
-      "Fullstack Developer Indonesia", 
-      "React Developer Indonesia",
-      "AI Developer Indonesia",
-      "Next.js Expert",
-      "JavaScript Developer",
-      "TypeScript Developer",
-      "Web Development Indonesia",
-      "Freelance Developer",
-      "Jombang Developer",
-      "East Java Developer",
-      "Portfolio Website",
-      "Software Engineer Indonesia"
-    ],
-    author: "Markus Prap Kurniawan",
-    type: "website",
-    url: "https://markusprap.space",
-    image: "/logo_title.png"
-  })
-}
+  title: "Markus Prap Kurniawan — Full-Stack Developer",
+  description:
+    "Full-Stack Developer based in Jombang, East Java. Crafting clean, purposeful software that turns complex ideas into seamless digital experiences.",
+};
 
 export default function RootLayout({
   children,
-}: Readonly<{
-  children: React.ReactNode
-}>) {
-  const personStructuredData = generatePersonStructuredData()
-
+}: {
+  children: React.ReactNode;
+}) {
   return (
-    <html lang="en" suppressHydrationWarning>
-      <head>
-        <link rel="icon" href="/logo_title.png" />
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify(personStructuredData),
-          }}
-        />
-      </head>
-      <body className={`${inter.variable} ${jetbrainsMono.variable} font-sans antialiased`}>
-        <ThemeProvider attribute="class" defaultTheme="system" enableSystem disableTransitionOnChange>
-          <ClientWrapperWithSuspense>
-            {children}
-          </ClientWrapperWithSuspense>
-          <AnalyticsTracker />
-          <Toaster />
-          <SonnerToaster />
-          <Analytics />
-        </ThemeProvider>
-      </body>
+    <html lang="en" className={`${dmSerif.variable} ${dmSans.variable}`}>
+      <body>{children}</body>
     </html>
-  )
+  );
 }
